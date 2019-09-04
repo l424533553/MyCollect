@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.collect.user_luo.mycollect">
+
+    <uses-permission
+        android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" /> <!-- 基本的权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- 网络权限  基础权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" /> <!-- 26 8.0以後沒有了 允许未知安装 -->
+    <!-- 获取电话的 状态信息 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 修改声音设置信息 -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /> <!-- NFC 权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.NFC" /> <!-- 系统弹框 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="Android.permission.INJECT_EVENTS" /> <!-- 可以唤醒屏幕的权限 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- android:usesCleartextTraffic="true" google文档中查找才发现Android9.0对未加密的流量不在信任
+    Android 9.0以后需要添加，否则访问网络失败。  API要求23及以上可用-->
+    <application
+        android:name=".base.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning"
+        tools:replace="android:icon,android:theme,android:allowBackup,android:name"
+        tools:targetApi="m">
+        <activity
+            android:name=".activity.webview.WebWhatActivity"
+            android:theme="@style/MyAppTheme" />
+        <activity
+            android:name=".activity.webview.WebMenuActivity"
+            android:theme="@style/MyAppTheme" />
+        <activity android:name=".test.WhatTestActivity" />
+
+        <!--自定义 contentProvider
+            authorities唯一标识该内容提供者，这样其它的应用
+            才可以找到该内容提供者并操作它的数据。
+            exported="true"默认为true,这样才能被其他应用使用
+          -->
+        <provider
+            android:name="com.collect.user_luo.androidstudy.StudentContentProvider"
+            android:authorities="com.collect.user_luo.androidstudy"
+            android:exported="true" />
+
+        <activity
+            android:name=".activity.mine.HardwareActivity"
+            android:theme="@style/MyAppTheme" /> <!--  -->
+        <!-- 设置一个隐式意图, intent中只能指定一个action，但却能指定多个category -->
+        <activity
+            android:name=".activity.mine.MineActivity"
+            android:theme="@style/Theme.AppCompat">
+            <intent-filter>
+                <action android:name="com.xuanyuan.xinyu.ACTION_START" />
+                <!-- 默认的DEFAULT ，所以 在intent中可以不必添加 -->
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+
+        <service
+            android:name=".activity.service.MyService"
+            android:enabled="true"
+            android:exported="true" />
+        <!--
+        <service
+                    android:name="com.xuanyuan.library.service.JobSchedulerService"
+                    android:permission="android.permission.BIND_JOB_SERVICE" />
+        -->
+        <!-- <activity android:name="com.collect.user_luo.mycollect.test.FloatVActivity" /> -->
+        <!-- FloatVActivity  浮点显示类 -->
+        <!-- HomeActivity -->
+        <!-- AppJumpActivity -->
+        <activity
+            android:name=".HomeActivity"
+            android:theme="@style/AppThemeCompat">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.refresh.RefreshActivity" />
+        <!--
+ 配置configChanges后，旋转不再重启app。如application中有配置onConfigurationChanged(Configuration newConfig)
+               则会执行其中的方法
+        -->
+        <activity
+            android:name=".WhatActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:name=".activity.sqlite.SqliteActivity" />
+        <activity android:name=".activity.service.MyServiceActivity" />
+        <activity
+            android:name=".activity.webview.WebActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".activity.RecyclerViewActivity" />
+        <activity android:name=".activity.bluetooth.BlueToothActivity" />
+        <activity android:name=".activity.progress.ProgressBarActivity" />
+        <activity android:name=".activity.socket.SocketTestActivity" />
+        <activity android:name=".TestActivity" />
+        <activity android:name=".activity.picture.fresco.FrescoActivity" />
+        <activity android:name=".activity.view.ViewActivity" />
+        <activity
+            android:name=".activity.eventbus.EventBusActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".activity.webview.WebViewActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity android:name=".activity.tools.Word2HtmlActivity" />
+        <activity android:name=".activity.tools.ToolsActivity" />
+        <!--
+    <activity
+                android:name=".activity.retrofit_rxjava.download.actvity.RetrofitApkdownActivity"
+                android:theme="@style/Base.Theme.AppCompat.Light" />
+        -->
+        <!-- <activity -->
+        <!-- android:name=".activity.retrofit_rxjava.RetrofitOrRxjavaActivity" -->
+        <!-- android:theme="@style/Base.Theme.AppCompat.Light" /> -->
+        <activity
+            android:name=".activity.system.SystemActivity"
+            android:theme="@style/Base.Theme.AppCompat.Light" />
+        <activity
+            android:name=".activity.bugly.MyBuglyActivity"
+            android:theme="@style/Base.Theme.AppCompat.Light" />
+        <activity
+            android:name=".activity.bugly.BuglyOtherActivity"
+            android:theme="@style/Base.Theme.AppCompat.Light" />
+        <activity
+            android:name=".activity.bugly.UpgradeActivity"
+            android:theme="@style/Base.Theme.AppCompat.Light" />
+        <activity
+            android:name=".apk_update.ApkUpdateActivity"
+            android:theme="@style/Base.Theme.AppCompat.Light" /> <!-- retrofit_rxjava 使用 做的一个APk 下载更新的 服务 -->
+        <service android:name=".apk_update.download.DownloadIntentService" /> <!--  -->
+        <service
+            android:name=".service.MyRemoteService"
+            android:exported="true"
+            android:process=":remote">
+
+            <!-- 可以响应的Intent， 设置有action过滤器 -->
+            <!-- //MyService可以响应带有scut.carson_ho.service_server.AIDL_Service1这个action的Intent。 -->
+            <intent-filter>
+                <action android:name="scut.carson_ho.service_server.AIDL_Service1" />
+            </intent-filter>
+        </service>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.collect.user_luo.mycollect.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>

@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">MyCollect集合</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">多个刷新界面显示</string>
+    <string name="down_logo">下载logo</string>
+
+    <string name="showToast">显示结果</string>
+    <string name="loadPatch">加载补丁</string>
+    <string name="loadLibrary">加载so库</string>
+    <string name="userDownload">手动下载补丁包</string>
+    <string name="checkUpgrade">检查更新</string>
+    <string name="userPatch">手动合成补丁</string>
+
+    <string name="string_confirm">确&#160;认</string>
+    <string name="string_cancel_txt">取&#160;&#160;&#160;消</string>
+    <string name="cancel" tools:ignore="ButtonCase">cancel</string>
+    <string name="confirm">OK</string>
+
+    <string name="magicasrkura_prompt_0">主题变换，弹出框 内容一</string>
+    <string name="magicasrkura_prompt_1">主题变换，弹出框 内容二</string>
+    <string name="magicasrkura_prompt_2">主题变换，弹出框 内容三</string>
+
+    <!-- 票据 测试 开发 -->
+
+    <!-- 使用 测试 开发 -->
+</resources>

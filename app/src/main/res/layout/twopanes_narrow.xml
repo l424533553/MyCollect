@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:textDirection="firstStrongRtl"
+    android:textAlignment="center"
+    android:tooltipText="@string/fgh_mask_top_release"
+    android:orientation="horizontal">
+
+    <fragment
+        android:id="@+id/headlines"
+        android:name="com.collect.user_luo.mycollect.fragment.test.HeadlinesFragment"
+        android:layout_width="200dp"
+        android:layout_height="fill_parent"
+        android:layout_marginEnd="10dp" />
+
+    <fragment
+        android:id="@+id/article"
+        android:name="com.collect.user_luo.mycollect.fragment.test.ArticleFragment"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="測定"
+        tools:ignore="HardcodedText" />
+    <!-- 数据功能  -->
+
+</LinearLayout>

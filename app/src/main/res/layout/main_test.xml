@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e8e8e8"
+    android:orientation="vertical">
+
+
+    <com.collect.user_luo.mycollect.view.ItemGroup
+        android:id="@+id/ig_home"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:drawable_left="@mipmap/home_message"
+        app:drawable_right="@mipmap/icon_clear"
+        app:title="首页" />
+
+    <com.collect.user_luo.mycollect.view.ItemGroup
+        android:id="@+id/ig_soft"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:drawable_left="@mipmap/ic_launcher_round"
+        app:drawable_right="@mipmap/ic_launcher_round"
+        app:line_height="1"
+        app:title="软件介绍" />
+
+    <com.collect.user_luo.mycollect.view.ItemGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:drawable_left="@mipmap/ic_launcher_round"
+        app:drawable_right="@mipmap/ic_launcher_round"
+        app:line_height="1"
+        app:title="购物车" />
+
+    <com.collect.user_luo.mycollect.view.ItemGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:drawable_left="@mipmap/ic_launcher_round"
+        app:title="相关条款" />
+
+    <com.collect.user_luo.mycollect.view.ItemGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:drawable_left="@mipmap/ic_launcher_round"
+        app:title="推送服务" />
+
+    <com.collect.user_luo.mycollect.view.ItemGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:drawable_left="@mipmap/ic_launcher_round"
+        app:line_height="0"
+        app:title="设置" />
+
+    <com.collect.user_luo.mycollect.adapter.MyRecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+
+    </com.collect.user_luo.mycollect.adapter.MyRecyclerView>
+
+
+</LinearLayout>

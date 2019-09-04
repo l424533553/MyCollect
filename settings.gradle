@@ -1,0 +1,4 @@
+include ':app', ':magicasakura', ':databinding'
+include ':CommonLibrary'
+project(':CommonLibrary').projectDir = new File('../CommonLibrary/')
+include ':CommonLibrary:library'

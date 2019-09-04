@@ -1,0 +1,108 @@
+<resources>
+
+<!--    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">-->
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppThemeCompat" parent="Base.Theme.AppCompat">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <!-- Base application theme. -->
+    <style name="MyAppTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/color_clean</item>
+        <item name="colorPrimaryDark">@color/color_clean</item>
+        <item name="colorAccent">@color/color_clean</item>
+    </style>
+
+
+    <style name="MyDialogStyle">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+
+    <style name="SmartRefreshFragment_TabButton">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@drawable/selector_fragment_text_color</item>
+        <item name="android:background">@drawable/selector_fragment_btn</item>
+    </style>
+
+    <!-- 透明弹出框  ，使用时 在清单Activity中注册，配置 -->
+    <style name="MyWindowTranslucent" parent="Base.Theme.AppCompat">
+        窗口背景颜色
+        <item name="android:windowBackground">@android:color/transparent</item>
+        Dialog的windowFrame框为无
+        <item name="android:windowFrame">@null</item>
+        是否有标题
+        <item name="android:windowNoTitle">true</item>
+        是否浮现在activity之上
+        <item name="android:windowIsFloating">true</item>
+        窗口是否半透明——是（与第一条配合使用）
+        <item name="android:windowIsTranslucent">true</item>
+        这个不设置的话，可能会出现边框黑线
+        <item name="android:windowContentOverlay">@null</item>
+        窗口弹出效果
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+        是否允许背景模糊
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+
+    <style name="Item">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="Item.Layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dip</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="Item.Label">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+
+    </style>
+
+    <style name="Item.Edit">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginLeft">120dip</item>
+        <item name="android:layout_marginRight">100dip</item>
+
+    </style>
+
+    <!-- 给Activity用的Dialog类型 -->
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!--边框-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item>
+        <!--半透明-->
+        <item name="android:windowNoTitle">true</item>
+        <!--无标题-->
+        <item name="android:windowBackground">@color/transparent</item>
+        <!--背景透明-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--模糊-->
+    </style>
+
+</resources>

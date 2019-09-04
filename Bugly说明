@@ -1,0 +1,97 @@
+1.当仅需要Crash上报功能时，仅需配置
+ app.build配置： compile 'com.tencent.bugly:crashreport_upgrade:1.3.5'
+ application继承自定义的MyBuglyApplication
+
+2.当需要升级功能时相应的配置
+app.build配置：
+   // 升级包已经集成了Crash 普通包
+  compile 'com.tencent.bugly:crashreport_upgrade:latest.release'//其中latest.release指代最新版本号，也可以指定明确的版本号，例如1.2.0
+  //  针对NDK升级的包。如果对NDK不需要修改，可以不用配置
+  compile 'com.tencent.bugly:nativecrashreport:latest.release' //其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.2.0
+Bugly.init(getApplicationContext(), "注册时申请的APPID", false); 取代Crash上报的那种初始化方法
+
+3.Tinker 补丁测试步骤：
+1.打基准包安装并上报联网（注：填写唯一的tinkerId）
+2.对基准包的bug修复（可以是Java代码变更，资源的变更）
+3.修改基准包路径、修改补丁包tinkerId、mapping文件路径（如果开启了混淆需要配置）、resId文件路径
+4.执行buildTinkerPatchRelease打Release版本补丁包
+5.选择app/build/outputs/patch目录下的补丁包并上传（注：不要选择tinkerPatch目录下的补丁包，不然上传会有问题）
+6.编辑下发补丁规则，点击立即下发
+7.杀死进程并重启基准包，请求补丁策略（SDK会自动下载补丁并合成）
+8.再次重启基准包，检验补丁应用结果
+9.查看页面，查看激活数据的变化
+
+4.日常调试关闭Tinker:
+使用反射Application方式接入：可以直接在build.gradle中将apply from: 'tinker-support.gradle'注释掉。
+改造Application方式接入：先将tinkerSupport中overrideTinkerPatchConfiguration设置为false 修改成将tinkerSupport中enable设置为false。
+
+******************************热更新************************************
+// 在Application类中   安装tinker
+Beta.installTinker();  反射类型使用该种方式
+Beta.installTinker(this); 继承自Bulg的Application 使用该种方法
+Beta.cleanTinkerPatch();//清理所有的补丁，然后退回到基线版本
+
+额外注意：
+1.注意配置 权限
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<uses-permission android:name="android.permission.READ_LOGS" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+2. Activity配置，这个必须有，固定不变
+<activity
+    android:name="com.tencent.bugly.beta.ui.BetaActivity"
+    android:configChanges="keyboardHidden|orientation|screenSize|locale"
+    android:theme="@android:style/Theme.Translucent" />
+
+3. 配置FileProvider，想兼容7.0及以上需要配置。 文件访问权限加强啦
+注意：如果您想兼容Android N或者以上的设备，必须要在AndroidManifest.xml文件中配置FileProvider来访问共享路径的文件。
+ <provider
+    android:name="android.support.v4.content.FileProvider"
+    android:authorities="${applicationId}.fileProvider"
+    android:exported="false"
+    android:grantUriPermissions="true">
+    <meta-data
+        android:name="android.support.FILE_PROVIDER_PATHS"
+        android:resource="@xml/provider_paths"/>
+</provider>
+
+4.注意混淆文件的配置
+-dontwarn com.tencent.bugly.**
+-keep public class com.tencent.bugly.**{*;}
+-dontwarn com.tencent.bugly.**
+-keep public class com.tencent.bugly.**{*;}
+-keep class android.support.**{*;}
+
+5.主要的API  checkUpgrade() 手动检查更新
+UpgradeInfo getUpgradeInfo()  获取本地已有升级策略（非实时，可用于界面红点展示）
+/**
+ * 检查更新  是否手动
+ * @param isManual  用户手动点击检查，非用户点击操作请传false
+ * @param isSilence 是否显示弹窗等交互，[true:没有弹窗和toast] [false:有弹窗或toast]
+ */
+public static synchronized void checkUpgrade(boolean isManual, boolean isSilence)
+
+6.升级更新的SDk最好和对的tinker－support  插件使用。不是最新就最好
+
+7. 使用完全,使用测试。
+
+1. 分别处理7.0以下和7.0及以上的两种情况，可能下载文件或者读取文件读不出来。
+2.
+
+HotFix 热修复流程
+完整接入流程 》》》
+1.打基准包安装并上报联网（注：填写唯一的tinkerId）
+2.对基准包的bug修复（可以是Java代码变更，资源的变更）
+3.修改基准包路径、修改补丁包tinkerId、mapping文件路径（如果开启了混淆需要配置）、resId文件路径
+4.执行buildTinkerPatchRelease打Release版本补丁包
+5.选择app/build/outputs/patch目录下的补丁包并上传（注：不要选择tinkerPatch目录下的补丁包，不然上传会有问题）
+6.编辑下发补丁规则，点击立即下发
+7.杀死进程并重启基准包，请求补丁策略（SDK会自动下载补丁并合成）
+8.再次重启基准包，检验补丁应用结果
+9.查看页面，查看激活数据的变化
+
+

@@ -1,0 +1,6 @@
+自己的开发工具库类
+
+1.二维码需要远程依赖
+implementation 'com.google.zxing:core:3.3.3'
+
+1. android:theme="@android:style/Theme.NoDisplay"  拥有该属性，将无法看到界面，但是home键能看到该应用

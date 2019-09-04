@@ -1,0 +1,192 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.collect.user_luo.mycollect"
+        minSdkVersion 17
+        targetSdkVersion 28
+        multiDexEnabled true
+        versionCode 1
+        versionName "3.970"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //添加如下配置就OK了
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi', 'x86' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
+    signingConfigs {
+        config {
+            keyAlias 'key0'
+            keyPassword '123456'
+            storeFile file('F:/luofaxin/singkey/weight.jks')
+            storePassword '123456'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.config
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable true
+            jniDebuggable false
+        }
+        debug {
+            debuggable true
+            minifyEnabled false
+            signingConfig signingConfigs.config
+        }
+
+
+//        sourceSets {
+//            //指定原始.proto文件的位置
+//            main {
+//                java {
+//                    srcDirs 'src/main/java'
+//                }
+//                proto {
+//                    srcDirs 'src/main/proto'
+//                }
+//            }
+//        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //SamartRefresh  刷新
+
+    //1.1.0 API改动过大，老用户升级需谨慎
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-4'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-4'
+    //没有使用特殊Header，可以不加这行
+
+    /*  微信 生成二维码  jar包 */
+    implementation 'com.google.zxing:core:3.3.3'
+    implementation 'eu.the4thfloor.volley:com.android.volley:2015.05.28'
+    implementation 'com.alibaba:fastjson:1.2.49'
+
+    //********************
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //ormlite  框架引用包
+    implementation 'com.j256.ormlite:ormlite-android:5.1'
+    implementation 'com.j256.ormlite:ormlite-core:5.1'
+    implementation 'com.j256.ormlite:ormlite-jdbc:5.1'
+
+    //Fresco 图片加载框架
+    implementation 'com.facebook.fresco:fresco:1.10.0'
+    implementation 'com.facebook.fresco:stetho:1.9.0'
+    implementation 'com.facebook.fresco:drawee:1.10.0'
+    implementation 'com.facebook.fresco:imagepipeline-base:1.10.0'
+
+    // 支持 WebP （静态图+动图），需要添加   支持 GIF 动图，需要添加
+    implementation 'com.facebook.fresco:animated-webp:1.9.0'
+
+    // 仅支持 WebP 静态图，需要添加
+    implementation 'com.facebook.fresco:webpsupport:1.9.0'
+
+    //fresco 封装好了的 okhttp  暂时不适用 okhttp2
+
+    //    implementation 'com.facebook.fresco:imagepipeline-okhttp:1.9.0'
+    implementation 'com.facebook.fresco:imagepipeline-okhttp3:1.9.0'
+    implementation 'com.youth.banner:banner:1.4.10'
+
+    // eventBus 总线
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation files('libs/poi-3.9-20121203.jar')
+    implementation files('libs/poi-scratchpad-3.9-20121203.jar')
+
+    // 编译数量 超过指定数量    当软件中的 包和方法超过指定数目后需要 引入下面的jar 包。 并在application中继承 MultiDexApplication
+    implementation 'com.android.support:multidex:1.0.3'
+
+    /** ********  retrofit2+Rxjava    主流框架 *****************/
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.3'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+
+    //网络请求框架 retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.0'
+
+    // okio通信框架
+    implementation 'com.squareup.okio:okio:2.2.2'
+    // 如果本地的NDk需要 更新则要配置下面的数据
+    // implementation 'com.tencent.bugly:nativecrashreport:3.6.0.1'
+
+    // 远程依赖集成方式（推荐） 不要升级到1.3.6否则报错
+    implementation 'com.tencent.bugly:crashreport_upgrade:1.4.1'
+    // 指定tinker依赖版本（注：应用升级1.3.5版本起，不再内置tinker）
+    implementation 'com.tencent.tinker:tinker-android-lib:1.9.13'
+    //蓝牙使用框架
+    implementation 'com.inuker.bluetooth:library:1.4.0'
+    //弹出框的框架
+    implementation 'com.github.f0ris.sweetalert:library:1.5.1'
+    /* 网络通信 框架 */
+    implementation files('libs/xUtils-2.6.14.jar')
+    //图片引入框架
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    // 无线wifi管理
+    implementation 'com.intentfilter:android-wificonnect:0.1.2'
+    /*  glide  图片加载框架*/
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    implementation 'com.bigkoo:convenientbanner:2.0.5'
+    implementation 'com.allenliu.versionchecklib:library:2.0.8'
+    implementation files('libs/ksoap2-android-assembly-2.5.2-jar-with-dependencies.jar')
+
+    implementation 'com.jeremyliao:live-event-bus:1.4.0'
+    implementation 'org.aspectj:aspectjrt:1.8.14'
+
+
+    // 引入了公共类
+    implementation project(':CommonLibrary:library')
+    implementation project(path: ':magicasakura')
+    implementation project(path: ':databinding')
+
+
+
+
+    /*** Unit Test 部分的功能   待开放学习的部分 **********************************************/
+//    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+//    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+//    androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.2'
+//    androidTestImplementation 'com.android.support.test.espresso:espresso-idling-resource:3.0.2'
+
+    // 学习测试 ，这个组合框架需要组合使用,  进行单元的测试
+
+}
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+// 依赖插件脚本
+apply from: 'tinker-support.gradle'
+// 符号表插件，可以方便数据的还原
+//apply plugin: 'bugly'
+//bugly {
+//    appId = '467fa8da1e'
+//    appKey = 'baf5c758-b9d3-4d6f-aff6-e269d48df9e5'
+//}
+

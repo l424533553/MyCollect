@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--   <animated-selector  需要sdk>=21 -->
+<animated-selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 开启状态 -->
+    <item
+        android:id="@+id/state_on"
+        android:drawable="@drawable/num1"
+        android:state_selected="true" />
+
+    <!-- 关闭状态 -->
+    <item
+        android:id="@+id/state_off"
+        android:drawable="@drawable/num9"
+        android:state_selected="false" />
+
+    <!-- 开启切换到关闭的动画 -->
+    <transition
+        android:fromId="@id/state_on"
+        android:toId="@id/state_off">
+        <animation-list>
+            <item
+                android:drawable="@drawable/num1"
+                android:duration="60" />
+            <item
+                android:drawable="@drawable/num2"
+                android:duration="60" />
+            <item
+                android:drawable="@drawable/num3"
+                android:duration="60" />
+            <item
+                android:drawable="@drawable/num4"
+                android:duration="60" />
+            <item
+                android:drawable="@drawable/num5"
+                android:duration="60" />
+            <item
+                android:drawable="@drawable/num6"
+                android:duration="60" />
+            <item
+                android:drawable="@drawable/num7"
+                android:duration="60" />
+            <item
+                android:drawable="@drawable/num8"
+                android:duration="60" />
+            <item
+                android:drawable="@drawable/num9"
+                android:duration="60" />
+        </animation-list>
+    </transition>
+
+    <!-- 关闭切换到开启的动画 -->
+    <transition
+        android:fromId="@id/state_off"
+        android:toId="@id/state_on">
+        <animation-list>
+            <item
+                android:drawable="@drawable/num9"
+                android:duration="60" />
+            <item
+                android:drawable="@drawable/num8"
+                android:duration="60" />
+            <item
+                android:drawable="@drawable/num7"
+                android:duration="60" />
+
+            <item
+                android:drawable="@drawable/num6"
+                android:duration="60" />
+            <item
+                android:drawable="@drawable/num5"
+                android:duration="60" />
+            <item
+                android:drawable="@drawable/num4"
+                android:duration="60" />
+            <item
+                android:drawable="@drawable/num3"
+                android:duration="60" />
+            <item
+                android:drawable="@drawable/num2"
+                android:duration="60" />
+            <item
+                android:drawable="@drawable/num1"
+                android:duration="60" />
+        </animation-list>
+    </transition>
+</animated-selector>
+
+    <!--  改变状态后，变化状态将不再只是从一种状态边另一种，而是可以有多种变化
+    使用方法：
+        final ImageView iv = findViewById(R.id.ivAnimate);
+            //将animated-selector设置为控件图像
+            Drawable drawable = getResources().getDrawable(R.drawable.animated_selector);
+            iv.setImageDrawable(drawable);
+            // 使用 方式
+            iv.setSelected(true);
+            iv.setSelected(false);
+    -->
+
+
+

@@ -1,0 +1,29 @@
+//proto的版本
+//syntax = "proto3";
+//如果设置生成的Java文件也将会自动存放到指定输出目录下的demo.app.com.protocolbufferdemo目录中。
+//如果没有设置，Java的包名则为package关键字指定的名称
+//option java_package = "demo.app.com.protocolbufferdemo";
+////如果设置生成的java文件名为TestBean，如果没有设置默认名为.proto文件名
+//option java_outer_classname = "TestBean";
+//message TestBean{
+//    required int64 id = 1;
+//    optional string name = 2;
+//    repeated string msg = 3;
+//}
+
+//syntax = "proto3";
+
+// package demoabc; // 此源文件所在的包，建议不指定
+
+// option:可赋值非必须赋值
+// java_package:目标文件的java包名
+option java_package = "com.collect.user_luo";
+
+// 目标文件中的java类名
+option java_outer_classname = "TTTT";
+
+message Person1{
+    required int64 id = 1;
+        optional string name = 2;
+        repeated string msg = 3;
+}
