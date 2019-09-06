@@ -80,7 +80,7 @@ public static synchronized void checkUpgrade(boolean isManual, boolean isSilence
 7. 使用完全,使用测试。
 
 1. 分别处理7.0以下和7.0及以上的两种情况，可能下载文件或者读取文件读不出来。
-2.
+
 
 HotFix 热修复流程
 完整接入流程 》》》
@@ -93,5 +93,6 @@ HotFix 热修复流程
 7.杀死进程并重启基准包，请求补丁策略（SDK会自动下载补丁并合成）
 8.再次重启基准包，检验补丁应用结果
 9.查看页面，查看激活数据的变化
+
 
 
