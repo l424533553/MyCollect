@@ -5,9 +5,6 @@ import android.os.Environment;
 import android.text.TextUtils;
 
 import com.alibaba.fastjson.util.IOUtils;
-import com.luofx.utils.log.LogUtils;
-import com.luofx.utils.log.MyLog;
-
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -37,9 +34,10 @@ public class FileUtils {
 
     /**
      * 获取配置信息
-     * @param context  上下文信息
-     * @param in       输入流
-     * @return         返回配置信息
+     *
+     * @param context 上下文信息
+     * @param in      输入流
+     * @return 返回配置信息
      */
     private synchronized Properties getPro(Context context, InputStreamReader in) {
         Properties pro = null;
@@ -526,6 +524,12 @@ public class FileUtils {
         return null;
     }
 
+    /**
+     *
+     * @param context   上下文对象
+     * @param cachefile  缓存文件路径
+     * @return   是否存在缓存文件
+     */
     public static boolean isExistDataCache(Context context, String cachefile) {
         if (context == null) return false;
         boolean exist = false;
@@ -533,4 +537,18 @@ public class FileUtils {
         if (data.exists()) exist = true;
         return exist;
     }
+
+    /**
+     * 清空缓存目录
+     */
+    public static boolean deleteFile(String Path) {
+        boolean isDeleteSuccess = true;
+        File dir = new File(Path);
+        File[] allfiles = dir.listFiles();
+        for (File file : allfiles) {
+            isDeleteSuccess = isDeleteSuccess && file.delete();
+        }
+        return isDeleteSuccess;
+    }
+
 }

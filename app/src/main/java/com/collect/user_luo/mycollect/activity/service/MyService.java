@@ -4,7 +4,6 @@ import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
-import android.content.ServiceConnection;
 import android.graphics.BitmapFactory;
 import android.os.Binder;
 import android.os.IBinder;
@@ -13,7 +12,6 @@ import android.support.v4.app.NotificationCompat;
 
 import com.collect.user_luo.mycollect.MainActivity;
 import com.collect.user_luo.mycollect.R;
-import com.collect.user_luo.mycollect.utils.Mylog;
 
 /**
  * 说明：Service

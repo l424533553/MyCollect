@@ -1,5 +1,6 @@
 package com.collect.user_luo.mycollect;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Intent;
@@ -27,10 +28,10 @@ import java.util.Map;
 import java.util.Random;
 
 public class HomeActivity extends MyAppCompatActivity implements AdapterView.OnItemClickListener, CardPickerDialog.ClickListener {
-    @Override
-    public boolean isCheckPermissions() {
-        return true;
-    }
+//    @Override
+//    public boolean isCheckPermissions() {
+//        return true;
+//    }
 
 
     private ListView listView;
@@ -54,8 +55,6 @@ public class HomeActivity extends MyAppCompatActivity implements AdapterView.OnI
     }
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +67,21 @@ public class HomeActivity extends MyAppCompatActivity implements AdapterView.OnI
 //        NotificationHelpter notificationHelpter = new NotificationHelpter(this);
 //        notificationHelpter.createNotification(this, "test_id");
 
+    }
+
+    @Override
+    protected String[] getPermissionsArray() {
+        String[] arr = new String[]{
+                Manifest.permission.MODIFY_AUDIO_SETTINGS,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.READ_PHONE_STATE,
+                Manifest.permission.ACCESS_NETWORK_STATE,
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.VIBRATE,
+                Manifest.permission.CAMERA
+        };
+        return arr;
     }
 
     @Override
@@ -98,10 +112,8 @@ public class HomeActivity extends MyAppCompatActivity implements AdapterView.OnI
         }
     }
 
-
     @Override
     public void onConfirm(int currentTheme) {
-        //TODO  选择了主题,进行下一步操作
         if (ThemeHelper.getTheme(context) != currentTheme) {
             ThemeHelper.setTheme(context, currentTheme);
             ThemeUtils.refreshUI(context, new ThemeUtils.ExtraRefreshable() {
@@ -137,7 +149,8 @@ public class HomeActivity extends MyAppCompatActivity implements AdapterView.OnI
 
     /**
      * 获取弹出信息 内容
-     * @param current  当前的theme id
+     *
+     * @param current 当前的theme id
      */
     private String getSnackContent(int current) {
         Random random = new Random();

@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.View;
 
 import com.collect.user_luo.mycollect.R;
-import com.collect.user_luo.mycollect.utils.Mylog;
 
 public class MyServiceActivity extends AppCompatActivity {
 

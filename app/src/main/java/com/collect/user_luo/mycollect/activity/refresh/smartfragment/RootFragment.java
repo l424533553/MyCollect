@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.collect.user_luo.mycollect.R;
-import com.collect.user_luo.mycollect.utils.Mylog;
 
 /**
  *

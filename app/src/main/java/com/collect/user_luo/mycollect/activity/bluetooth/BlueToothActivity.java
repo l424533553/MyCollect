@@ -14,7 +14,6 @@ import android.widget.Toast;
 
 import com.collect.user_luo.mycollect.R;
 import com.collect.user_luo.mycollect.utils.BlueToothUtils;
-import com.collect.user_luo.mycollect.utils.Mylog;
 
 public class BlueToothActivity extends AppCompatActivity {
     private static BroadcastReceiver mReceiver1 = null;

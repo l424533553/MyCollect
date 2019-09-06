@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
+import com.collect.user_luo.R;
 import com.collect.user_luo.mycollect.activity.eventbus.LiveEventBusFragment;
 import com.collect.user_luo.mycollect.activity.refresh.smartfragment.SmartRefreshFragment;
 import com.collect.user_luo.mycollect.activity.refresh.smartfragment.SwipeRefreshFragment;

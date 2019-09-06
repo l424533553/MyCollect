@@ -3,9 +3,7 @@ package com.collect.user_luo.mycollect.utils;
 
 import org.apache.poi.util.SystemOutLogger;
 
-public class Tools {
-
-    //byte תʮ������
+public class StringTools {
     public static String Bytes2HexString(byte[] b, int size) {
         String ret = "";
         for (int i = 0; i < size; i++) {
@@ -57,12 +55,6 @@ public class Tools {
         return abyte0;
     }
 
-    //
-
-    private void test() {
 
 
-        System.out.println(SystemOutLogger.DEBUG);
-
-    }
 }

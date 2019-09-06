@@ -1,6 +1,5 @@
-package com.collect.user_luo;
+package com.collect.user_luo.mytest;
 
-import com.collect.user_luo.mytest.Student;
 
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
@@ -42,27 +41,7 @@ public class Test {
         return result;
     }
 
-    /**
-     * 使用数据功能，数据功能
-     */
-    private static void testTest() {
-        // 使用功能
-        // 使用功能
 
-//        System.out.println(stu == stu1);
-//        System.out.println(stu1.equals(stu2));
-//     Object ojb=   super.clone();
-
-    }
-
-
-    // 1.
-    // TODO test 测试
-    private void test(){
-        //TODO 测试 数据 测试
-
-        //
-    }
 
 
 }

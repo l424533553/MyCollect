@@ -9,7 +9,6 @@ import com.collect.user_luo.mycollect.sqlite.ormlite.ArticleBean;
 import com.collect.user_luo.mycollect.sqlite.ormlite.ArticleDao;
 import com.collect.user_luo.mycollect.sqlite.ormlite.MyTest;
 import com.collect.user_luo.mycollect.sqlite.ormlite.MyTestDao;
-import com.collect.user_luo.mycollect.utils.Mylog;
 import com.j256.ormlite.dao.ForeignCollection;
 
 import java.util.Iterator;

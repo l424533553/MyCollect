@@ -2,7 +2,7 @@ package com.collect.user_luo.mycollect.apk_update.download;
 
 import android.os.Environment;
 
-import com.collect.user_luo.mycollect.base.MyApplication;
+import com.collect.user_luo.mycollect.application.MyApplication;
 
 
 /**

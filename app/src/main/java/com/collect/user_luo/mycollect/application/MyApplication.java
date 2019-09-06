@@ -1,4 +1,4 @@
-package com.collect.user_luo.mycollect.base;
+package com.collect.user_luo.mycollect.application;
 
 import android.annotation.SuppressLint;
 import android.app.job.JobInfo;
@@ -12,9 +12,7 @@ import android.view.WindowManager;
 
 import com.collect.user_luo.mycollect.MainActivity;
 import com.facebook.drawee.backends.pipeline.Fresco;
-import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.luofx.base.MyBaseApplication;
-import com.tencent.bugly.crashreport.CrashReport;
+import com.xuanyuan.library.base.application.BaseVolleyApplication;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -25,7 +23,8 @@ import java.util.List;
  * 作者：User_luo on 2018/5/16 15:20
  * 邮箱：424533553@qq.com
  */
-public class MyApplication extends MyBaseApplication {
+public class MyApplication extends BaseVolleyApplication {
+
 
     private WindowManager.LayoutParams windowParams = new WindowManager.LayoutParams();
 
@@ -36,6 +35,30 @@ public class MyApplication extends MyBaseApplication {
     @SuppressLint("StaticFieldLeak")
     private static MyApplication sInstance;
 
+    @Override
+    protected boolean isOpenVolley() {
+        return true;
+    }
+
+    @Override
+    protected boolean isOpenRetryPolicy() {
+        return true;
+    }
+
+    @Override
+    protected boolean isOpenCrashHandler() {
+        return false;
+    }
+
+    @Override
+    protected boolean isDebugMode() {
+        return true;
+    }
+
+    @Override
+    protected boolean isOpenBugly() {
+        return true;
+    }
 
     /**
      * 是用开发测试的结果

@@ -2,7 +2,7 @@ package com.collect.user_luo.mycollect.data;
 
 import com.collect.user_luo.mycollect.MainActivity;
 import com.collect.user_luo.mycollect.R;
-import com.collect.user_luo.mycollect.TestActivity;
+import com.collect.user_luo.mytest.TestActivity;
 import com.collect.user_luo.mycollect.activity.RecyclerViewActivity;
 import com.collect.user_luo.mycollect.activity.webview.WebActivity;
 import com.collect.user_luo.mycollect.activity.bluetooth.BlueToothActivity;

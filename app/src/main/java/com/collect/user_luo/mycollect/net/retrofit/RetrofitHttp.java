@@ -2,7 +2,7 @@ package com.collect.user_luo.mycollect.net.retrofit;
 
 import com.collect.user_luo.mycollect.apk_update.download.Constant_APK;
 import com.collect.user_luo.mycollect.apk_update.download.JsDownloadInterceptor;
-import com.collect.user_luo.mycollect.base.MyApplication;
+import com.collect.user_luo.mycollect.application.MyApplication;
 import com.xuanyuan.library.utils.MyPreferenceUtils;
 
 import java.io.File;

@@ -16,7 +16,6 @@ import android.widget.Toast;
 
 import com.collect.user_luo.mycollect.R;
 import com.collect.user_luo.mycollect.adapter.MyPagerAdapter_Advance;
-import com.collect.user_luo.mycollect.utils.Mylog;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,5 @@
 package com.collect.user_luo.androidstudy;
 
-import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -20,9 +19,7 @@ public class StudentDao {
         return null;
     }
 
-    public void insertStudent(ContentValues values) {
-
-    }
+    public void insertStudent(ContentValues values) { }
 
     public int deleteStudent() {
         return 0;

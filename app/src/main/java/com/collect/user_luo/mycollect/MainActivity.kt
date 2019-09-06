@@ -3,7 +3,6 @@ package com.collect.user_luo.mycollect
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.collect.user_luo.mycollect.utils.Mylog
 
 class MainActivity : AppCompatActivity() {
 
