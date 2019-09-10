@@ -8,7 +8,7 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.widget.Toast;
 
-import com.collect.user_luo.mycollect.R;
+import com.collect.user_luo.R;
 import com.collect.user_luo.mycollect.adapter.recycleradapter.MyRecyclerAdapter;
 import com.collect.user_luo.mycollect.data.HomeData;
 import com.collect.user_luo.mycollect.listener.OnItemClickListener;

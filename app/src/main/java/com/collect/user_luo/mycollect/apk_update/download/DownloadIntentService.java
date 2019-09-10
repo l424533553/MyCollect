@@ -10,11 +10,11 @@ import android.util.Log;
 import android.widget.RemoteViews;
 
 
-import com.collect.user_luo.mycollect.R;
+import com.collect.user_luo.R;
 import com.collect.user_luo.mycollect.net.retrofit.DownloadCallBack;
 import com.collect.user_luo.mycollect.net.retrofit.RetrofitHttp;
 import com.luofx.help.NotificationHelpter;
-import com.luofx.utils.apk.MyApkUtils;
+import com.xuanyuan.library.utils.MyApkUtils;
 
 import java.io.File;
 

@@ -3,7 +3,7 @@ package com.collect.user_luo.mycollect.net.retrofit;
 import com.collect.user_luo.mycollect.apk_update.download.Constant_APK;
 import com.collect.user_luo.mycollect.apk_update.download.JsDownloadInterceptor;
 import com.collect.user_luo.mycollect.application.MyApplication;
-import com.xuanyuan.library.utils.MyPreferenceUtils;
+import com.xuanyuan.library.utils.storage.MyPreferenceUtils;
 
 import java.io.File;
 import java.io.InputStream;

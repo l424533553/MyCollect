@@ -3,6 +3,7 @@ package com.collect.user_luo.mycollect
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.collect.user_luo.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,7 +16,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<View>(R.id.btnTest).setOnClickListener {
-            Mylog.log("测试")
             it.isClickable=false
         }
     }

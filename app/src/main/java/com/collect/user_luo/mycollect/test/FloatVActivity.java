@@ -11,7 +11,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.collect.user_luo.mycollect.R;
+import com.collect.user_luo.R;
+
 
 public class FloatVActivity extends Activity implements OnClickListener
 {
@@ -34,8 +35,8 @@ public class FloatVActivity extends Activity implements OnClickListener
 	private void buidView()
 	{
 		Log.d("lq", "FloatVActivity buidView");
-		show = (Button) findViewById(R.id.show);
-		hide = (Button) findViewById(R.id.hide);
+		show = findViewById(R.id.show);
+		hide = findViewById(R.id.hide);
 
 
 		op = new operatePanel(this);

@@ -8,8 +8,9 @@ import android.util.Log;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
-import com.collect.user_luo.mycollect.R;
-import com.luofx.utils.text.MyFileUtils;
+
+import com.collect.user_luo.R;
+import com.xuanyuan.library.utils.text.FileUtils;
 
 import org.apache.poi.hwpf.HWPFDocument;
 import org.apache.poi.hwpf.converter.PicturesManager;
@@ -57,7 +58,8 @@ public class Word2HtmlActivity extends FragmentActivity {
         setContentView(R.layout.activity_word_html);
 
         String name = docName.substring(0, docName.indexOf("."));
-        String savePath = MyFileUtils.getDownloadDir(this, MyFileUtils.DOWNLOAD_DIR);
+        FileUtils fileUtils = new FileUtils();
+        String savePath = fileUtils.getDownloadDir(this, FileUtils.TYPE_DOWNLOAD_DIR);
         try {
             convert2Html(docName, savePath, name);
 //            convert2Html(docPath + docName, savePath + name + ".html");

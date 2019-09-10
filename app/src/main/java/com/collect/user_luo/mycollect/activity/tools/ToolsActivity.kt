@@ -8,7 +8,7 @@ import android.support.v4.content.ContextCompat.startActivity
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ListView
-import com.collect.user_luo.mycollect.R
+import com.collect.user_luo.R
 import com.collect.user_luo.mycollect.adapter.StringAdapter
 import com.collect.user_luo.mycollect.data.HomeData
 

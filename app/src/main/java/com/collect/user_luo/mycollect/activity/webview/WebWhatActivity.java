@@ -5,7 +5,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.collect.user_luo.mycollect.R;
+
+import com.collect.user_luo.R;
 
 import static com.collect.user_luo.mycollect.config.IConstants.EXTRA_INTENT;
 import static com.collect.user_luo.mycollect.config.IConstants.EXTRA_INTENT_JUMP2_WEB_TEST1;

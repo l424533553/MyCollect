@@ -3,11 +3,10 @@
 
     <data>
 
+        <!-- 使用情况 -->
         <import type="leavesc.hello.databindingsamples.model.User" />
 
         <import type="leavesc.hello.databindingsamples.Main6Activity.UserPresenter" />
-
-        <import type="leavesc.hello.databindingsamples.StringUtils" />
 
         <variable
             name="userInfo"
@@ -28,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="@{()->userPresenter.onUserNameClick(userInfo)}"
-            android:text="@{StringUtils.toUpperCase(userInfo.name)}" />
+            android:text="@{userInfo.name}" />
 
         <TextView
             android:layout_width="match_parent"
@@ -48,7 +47,5 @@
             android:layout_height="wrap_content"
             android:afterTextChanged="@{userPresenter.afterUserPasswordChanged}"
             android:hint="密码" />
-
     </LinearLayout>
-
 </layout>

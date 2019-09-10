@@ -17,14 +17,15 @@
 package com.luofx.help;
 
 import android.content.Context;
-import android.content.SharedPreferences;
+
+import com.xuanyuan.library.utils.storage.MyPreferenceUtils;
 
 
 /**
- * @author xyczero
- * @time 16/5/2
+ * 进行主题颜色改变的
  */
 public class ThemeHelper {
+
     private static final String CURRENT_THEME = "theme_current";
 
     public static final int CARD_SAKURA = 0x1;
@@ -36,18 +37,15 @@ public class ThemeHelper {
     public static final int CARD_SAND = 0x7;
     public static final int CARD_FIREY = 0x8;
 
-    public static SharedPreferences getSharePreference(Context context) {
-        return context.getSharedPreferences("multiple_theme", Context.MODE_PRIVATE);
-    }
 
     public static void setTheme(Context context, int themeId) {
-        getSharePreference(context).edit()
+        MyPreferenceUtils.getSp(context).edit()
                 .putInt(CURRENT_THEME, themeId)
                 .apply();
     }
 
     public static int getTheme(Context context) {
-        return getSharePreference(context).getInt(CURRENT_THEME, CARD_SAKURA);
+        return  MyPreferenceUtils.getSp(context).getInt(CURRENT_THEME, CARD_SAKURA);
     }
 
     public static boolean isDefaultTheme(Context context) {

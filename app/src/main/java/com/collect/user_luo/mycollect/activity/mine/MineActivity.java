@@ -5,17 +5,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.collect.user_luo.mycollect.R;
+import com.collect.user_luo.R;
 import com.xuanyuan.library.MyTestActivity;
 import com.xuanyuan.library.base.activity.MyAppCompatActivity;
 
 
 public class MineActivity extends MyAppCompatActivity implements View.OnClickListener {
 
-    @Override
-    public boolean isCheckPermissions() {
-        return true;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +43,11 @@ public class MineActivity extends MyAppCompatActivity implements View.OnClickLis
 
         findViewById(R.id.btnHardwareInfo).setOnClickListener(this);
         findViewById(R.id.btnFuncTest).setOnClickListener(this);
+    }
+
+    @Override
+    protected String[] getPermissionsArray() {
+        return new String[0];
     }
 
     @Override

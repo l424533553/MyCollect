@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.collect.user_luo.mycollect.R;
+import com.collect.user_luo.R;
 import com.collect.user_luo.mycollect.adapter.StringAdapter;
 import com.collect.user_luo.mycollect.data.HomeData;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;

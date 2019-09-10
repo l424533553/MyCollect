@@ -5,7 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 
-import com.collect.user_luo.mycollect.R;
+import com.collect.user_luo.R;
 import com.collect.user_luo.mycollect.activity.view.fragment.OneFragment;
 import com.collect.user_luo.mycollect.activity.view.fragment.SecondFragment;
 import com.collect.user_luo.mycollect.adapter.ViewPagerAdapter;
@@ -24,7 +24,7 @@ public class ViewActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view);
-        myViewPager = (ViewPager) findViewById(R.id.myViewPager);
+        myViewPager = findViewById(R.id.myViewPager);
 
         //把Fragment添加到List集合里面
         list = new ArrayList<>();

@@ -1,14 +1,12 @@
 package com.collect.user_luo.mycollect.activity.refresh.smartfragment;
 
-
-import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import com.collect.user_luo.mycollect.R;
+import com.collect.user_luo.R;
+
 
 /**
  * 加入指定的 Header 和 Footer

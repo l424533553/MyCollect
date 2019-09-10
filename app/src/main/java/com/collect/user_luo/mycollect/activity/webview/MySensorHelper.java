@@ -7,7 +7,8 @@ import android.provider.Settings;
 import android.util.Log;
 import android.view.OrientationEventListener;
 
-import com.collect.user_luo.mycollect.BuildConfig;
+
+import com.collect.user_luo.BuildConfig;
 
 import java.lang.ref.WeakReference;
 

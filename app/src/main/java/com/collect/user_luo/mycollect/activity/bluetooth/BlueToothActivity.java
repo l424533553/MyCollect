@@ -12,8 +12,9 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.collect.user_luo.mycollect.R;
+import com.collect.user_luo.R;
 import com.collect.user_luo.mycollect.utils.BlueToothUtils;
+import com.xuanyuan.library.utils.log.MyLog;
 
 public class BlueToothActivity extends AppCompatActivity {
     private static BroadcastReceiver mReceiver1 = null;
@@ -36,24 +37,24 @@ public class BlueToothActivity extends AppCompatActivity {
 //        }
 
         boolean isBlueToothAble = BlueToothUtils.checkBluetoothValid(this, this);
-        Mylog.log("蓝牙设备是否可用" + isBlueToothAble);
+        MyLog.log("蓝牙设备是否可用" + isBlueToothAble);
 
         mReceiver1 = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
                 String action = intent.getAction();
-                Mylog.log("蓝牙动作" + action);
+                MyLog.log("蓝牙动作" + action);
 
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
                 Toast.makeText(BlueToothActivity.this, "蓝牙状态改变广播 !", Toast.LENGTH_LONG).show();
 
                 // 蓝牙状态 改变了
                 if (BluetoothAdapter.ACTION_STATE_CHANGED.equals(action)) {
-                    Mylog.log("蓝牙状态变了");
+                    MyLog.log("蓝牙状态变了");
                     //获取 蓝牙的状态信息
                     int state = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, BluetoothAdapter.ERROR);
 
-                    Mylog.log("蓝牙的状态" + state);
+                    MyLog.log("蓝牙的状态" + state);
                     switch (state) {
                         case BluetoothAdapter.STATE_OFF:
                             Log.d("aaa", "STATE_OFF 手机蓝牙关闭");
@@ -73,27 +74,21 @@ public class BlueToothActivity extends AppCompatActivity {
 
                 if (BluetoothDevice.ACTION_FOUND.equals(action)) {
                     Toast.makeText(BlueToothActivity.this, device.getName() + " 设备已发现！！", Toast.LENGTH_LONG).show();
-                    Mylog.log(device.getName() + " 设备已发现");
                     tvTextView.setText("设备已发现");
                 } else if (BluetoothDevice.ACTION_ACL_CONNECTED.equals(action)) {
                     tvTextView.setText("蓝牙已连接");
-                    Mylog.log(device.getName() + " 蓝牙已连接");
                     Toast.makeText(BlueToothActivity.this, device.getName() + "已连接", Toast.LENGTH_LONG).show();
                 } else if (BluetoothDevice.ACTION_ACL_DISCONNECT_REQUESTED.equals(action)) {
                     Toast.makeText(BlueToothActivity.this, device.getName() + "正在断开蓝牙连接。。。", Toast.LENGTH_LONG).show();
-                    Mylog.log(device.getName() + " 正在断开蓝牙连接");
 
                 } else if (BluetoothDevice.ACTION_ACL_DISCONNECTED.equals(action)) {
                     Toast.makeText(BlueToothActivity.this, device.getName() + "蓝牙连接已断开！！！", Toast.LENGTH_LONG).show();
 
-                    Mylog.log(device.getName() + " 蓝牙连接已断开");
                     tvTextView.setText("蓝牙连接已断开");
                 } else if (action.equals(BluetoothAdapter.STATE_OFF)) {
                     Toast.makeText(BlueToothActivity.this, "蓝牙已关闭", Toast.LENGTH_LONG).show();
-                    Mylog.log(device.getName() + " 蓝牙已关闭");
                     tvTextView.setText("蓝牙已关闭！！");
                 } else if (action.equals(BluetoothAdapter.STATE_ON)) {
-                    Mylog.log(device.getName() + " 蓝牙打开");
                     Toast.makeText(BlueToothActivity.this, "蓝牙打开", Toast.LENGTH_LONG).show();
                     tvTextView.setText("蓝牙已打开！！");
                 }

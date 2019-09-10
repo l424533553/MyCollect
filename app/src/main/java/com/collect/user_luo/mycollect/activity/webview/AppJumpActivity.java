@@ -15,7 +15,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.collect.user_luo.mycollect.R;
+import com.collect.user_luo.R;
+
 
 /**
  * app 跳转测试 ，通过点击跳转到网页 或者 对应的其他软件中去

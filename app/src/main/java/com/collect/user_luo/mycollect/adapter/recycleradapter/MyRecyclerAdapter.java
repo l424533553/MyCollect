@@ -8,7 +8,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.collect.user_luo.mycollect.R;
+
+import com.collect.user_luo.R;
 import com.collect.user_luo.mycollect.listener.OnItemClickListener;
 
 import java.util.ArrayList;

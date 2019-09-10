@@ -12,7 +12,7 @@ import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
 
-import com.collect.user_luo.mycollect.R;
+import com.collect.user_luo.R;
 
 import java.text.DecimalFormat;
 

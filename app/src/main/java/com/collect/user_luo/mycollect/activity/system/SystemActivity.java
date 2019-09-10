@@ -20,7 +20,7 @@ import android.util.DisplayMetrics;
 import android.view.Display;
 import android.widget.TextView;
 
-import com.collect.user_luo.mycollect.R;
+import com.collect.user_luo.R;
 import com.xuanyuan.library.base.activity.MyAppCompatActivity;
 
 import java.io.BufferedReader;
@@ -33,11 +33,6 @@ public class SystemActivity extends MyAppCompatActivity {
     private WifiManager wifi;
     private Display display;
 
-    @Override
-    public boolean isCheckPermissions() {
-        return false;
-    }
-
     @SuppressLint("WifiManagerLeak")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +44,11 @@ public class SystemActivity extends MyAppCompatActivity {
         DisplayMetrics metrics = getResources().getDisplayMetrics();
 
         init();
+    }
+
+    @Override
+    protected String[] getPermissionsArray() {
+        return new String[0];
     }
 
     /**

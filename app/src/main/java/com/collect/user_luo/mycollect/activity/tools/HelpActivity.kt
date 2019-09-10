@@ -1,15 +1,15 @@
 package com.collect.user_luo.mycollect.activity.tools
 
-import com.collect.user_luo.mycollect.R
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
 import android.webkit.WebSettings
 import android.webkit.WebView
+import com.collect.user_luo.R
 
-import com.luofx.utils.file.FileUtils
-import com.xuanyuan.library.utils.MyPreferenceUtils
+import com.xuanyuan.library.utils.storage.MyPreferenceUtils
+import com.xuanyuan.library.utils.text.FileUtils
 import org.apache.poi.hwpf.HWPFDocument
 import org.apache.poi.hwpf.converter.PicturesManager
 import org.apache.poi.hwpf.converter.WordToHtmlConverter
@@ -36,7 +36,8 @@ class HelpActivity : AppCompatActivity() {
 
         val isNotFirst = MyPreferenceUtils.getBoolean(this, "isNotFirst")
         name = docName.substring(0, docName.indexOf("."))
-        savePath = FileUtils.getDownloadDir(this, FileUtils.DOWNLOAD_DIR)
+        var fileUtils = FileUtils()
+        savePath = fileUtils.getDownloadDir(this, FileUtils.TYPE_DOWNLOAD_DIR)
 
         if (!isNotFirst) {//第一次
 //            val sysApplication = application as SysApplication

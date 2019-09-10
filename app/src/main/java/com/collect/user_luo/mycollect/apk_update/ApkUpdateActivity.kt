@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
-import com.collect.user_luo.mycollect.R
+import com.collect.user_luo.R
 import com.collect.user_luo.mycollect.apk_update.download.DownloadIntentService
 import com.xuanyuan.library.MyToast
 

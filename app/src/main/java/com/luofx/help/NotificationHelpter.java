@@ -11,7 +11,8 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.NotificationCompat;
 import android.widget.RemoteViews;
 
-import com.collect.user_luo.mycollect.R;
+
+import com.collect.user_luo.R;
 
 import static android.app.Notification.VISIBILITY_SECRET;
 

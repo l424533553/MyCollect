@@ -4,6 +4,8 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.util.Log;
 
+import com.xuanyuan.library.utils.log.MyLog;
+
 import java.util.List;
 
 import static android.content.Context.ACTIVITY_SERVICE;
@@ -32,7 +34,7 @@ public class CommonUtils {
                 return true;
             }
         }
-        Mylog.log(String.format("the %s is not running, isAppAlive return false", packageName));
+        MyLog.log(String.format("the %s is not running, isAppAlive return false", packageName));
         return false;
     }
 
@@ -49,7 +51,7 @@ public class CommonUtils {
         for (ActivityManager.RunningTaskInfo info : list) {
             // 注意这里的 topActivity 包含 packageName和className，可以打印出来看看
             if (info.topActivity.toString().equals(activityName) || info.baseActivity.toString().equals(activityName)) {
-                Mylog.log(info.topActivity.getPackageName() + " info.baseActivity.getPackageName()=" + info.baseActivity.getPackageName());
+                MyLog.log(info.topActivity.getPackageName() + " info.baseActivity.getPackageName()=" + info.baseActivity.getPackageName());
                 return true;
             }
         }

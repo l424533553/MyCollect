@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 
-import com.collect.user_luo.mycollect.R;
+import com.collect.user_luo.R;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 

@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import com.collect.user_luo.mycollect.R;
+import com.collect.user_luo.R;
 import com.collect.user_luo.mycollect.WhatActivity;
 import com.collect.user_luo.mycollect.adapter.StringAdapter;
 import com.collect.user_luo.mycollect.config.IConstants;

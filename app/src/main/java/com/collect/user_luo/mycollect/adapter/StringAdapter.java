@@ -7,7 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.collect.user_luo.mycollect.R;
+
+import com.collect.user_luo.R;
 
 import java.util.ArrayList;
 import java.util.List;

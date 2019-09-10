@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.webkit.*
 import android.widget.FrameLayout
-import com.collect.user_luo.mycollect.R
+import com.collect.user_luo.R
 
 @Suppress("DEPRECATION")
 class WebViewActivity : AppCompatActivity() {
@@ -104,7 +104,7 @@ class WebViewActivity : AppCompatActivity() {
     }
 
     //
-    fun void(){
+    fun void() {
 
     }
     // 数据功能  // 数据 天气
@@ -119,29 +119,12 @@ class WebViewActivity : AppCompatActivity() {
             }
         })
 
-        // 数据 ,  测试 功能
-//        println("shuju" + R.id.Circle)
-        //数据功能 打印机
-    }
-
-    // 测试功能  数据
-    fun test() {
-        //数据，只能
-        // 测试数据功能
-    }
-
-    fun  shuju(){
-        println("message ")
-    }
-
-    //
+        //
 //    class  Xxx: WebViewClient() {
 //        override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
 //            return super.shouldOverrideUrlLoading(view, request)
 //        }
 //    }
-
-
 
 
 /*    // 进入全屏的时候
@@ -176,16 +159,16 @@ class WebViewActivity : AppCompatActivity() {
     }*/
 
 
-}
+    }
 
-class XWebChromeClient : WebChromeClient() {
-    override fun onProgressChanged(view: WebView?, newProgress: Int) {
-        super.onProgressChanged(view, newProgress)
-        if (newProgress > 20) {
+    class XWebChromeClient : WebChromeClient() {
+        override fun onProgressChanged(view: WebView?, newProgress: Int) {
+            super.onProgressChanged(view, newProgress)
+            if (newProgress > 20) {
 //            webView.loadUrl(BrowserJsInject.fullScreenByJs(luyan_bean.videoPath));
 
 
+            }
         }
     }
-
 }

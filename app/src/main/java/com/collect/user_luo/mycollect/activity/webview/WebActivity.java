@@ -11,7 +11,8 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.collect.user_luo.mycollect.R;
+import com.collect.user_luo.R;
+
 
 public class WebActivity extends AppCompatActivity {
     private WebView webView;
@@ -38,7 +39,7 @@ public class WebActivity extends AppCompatActivity {
     }
 
     private void init() {
-        webView = (WebView) findViewById(R.id.webView);
+        webView = findViewById(R.id.webView);
         //WebView加载本地资源
 //        webView.loadUrl("file:///android_asset/example.html");
         //WebView加载web资源

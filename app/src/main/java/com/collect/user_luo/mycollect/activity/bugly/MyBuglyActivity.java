@@ -12,11 +12,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.collect.user_luo.mycollect.R;
-import com.luofx.utils.log.MyLog;
+import com.collect.user_luo.R;
 import com.tencent.bugly.beta.Beta;
 import com.tencent.bugly.beta.UpgradeInfo;
 import com.tencent.bugly.crashreport.CrashReport;
+import com.xuanyuan.library.utils.log.MyLog;
 
 public class MyBuglyActivity extends AppCompatActivity implements View.OnClickListener {
 

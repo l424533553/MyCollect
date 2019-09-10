@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.collect.user_luo.mycollect.R;
+import com.collect.user_luo.R;
 import com.collect.user_luo.mycollect.adapter.StringAdapter;
 import com.collect.user_luo.mycollect.data.HomeData;
 import com.jeremyliao.liveeventbus.LiveEventBus;

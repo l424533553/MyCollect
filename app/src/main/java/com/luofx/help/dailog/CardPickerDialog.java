@@ -25,14 +25,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.collect.user_luo.mycollect.R;
+import com.collect.user_luo.R;
 import com.luofx.help.ThemeHelper;
 
 
 /**
  * 菜单 theme 主题选择按钮
  * @author xyczero
- * @time 16/5/29
  */
 public class CardPickerDialog extends DialogFragment implements View.OnClickListener {
     public static final String TAG = "CardPickerDialog";
@@ -59,16 +58,16 @@ public class CardPickerDialog extends DialogFragment implements View.OnClickList
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mCancel = (Button) view.findViewById(android.R.id.button2);
-        mConfirm = (Button) view.findViewById(android.R.id.button1);
-        mCards[0] = (ImageView) view.findViewById(R.id.theme_pink);
-        mCards[1] = (ImageView) view.findViewById(R.id.theme_purple);
-        mCards[2] = (ImageView) view.findViewById(R.id.theme_blue);
-        mCards[3] = (ImageView) view.findViewById(R.id.theme_green);
-        mCards[4] = (ImageView) view.findViewById(R.id.theme_green_light);
-        mCards[5] = (ImageView) view.findViewById(R.id.theme_yellow);
-        mCards[6] = (ImageView) view.findViewById(R.id.theme_orange);
-        mCards[7] = (ImageView) view.findViewById(R.id.theme_red);
+        mCancel = view.findViewById(android.R.id.button2);
+        mConfirm = view.findViewById(android.R.id.button1);
+        mCards[0] = view.findViewById(R.id.theme_pink);
+        mCards[1] = view.findViewById(R.id.theme_purple);
+        mCards[2] = view.findViewById(R.id.theme_blue);
+        mCards[3] = view.findViewById(R.id.theme_green);
+        mCards[4] = view.findViewById(R.id.theme_green_light);
+        mCards[5] = view.findViewById(R.id.theme_yellow);
+        mCards[6] = view.findViewById(R.id.theme_orange);
+        mCards[7] = view.findViewById(R.id.theme_red);
         setImageButtons(mCurrentTheme);
         for (ImageView card : mCards) {
             card.setOnClickListener(this);

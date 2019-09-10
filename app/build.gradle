@@ -159,13 +159,12 @@ dependencies {
     implementation 'com.jeremyliao:live-event-bus:1.4.0'
     implementation 'org.aspectj:aspectjrt:1.8.14'
 
-
     // 引入了公共类
-    implementation project(':CommonLibrary:library')
+    implementation project(':LibraryProject:library')
+//    implementation project(':LibraryProject:srclibrary')
+
     implementation project(path: ':magicasakura')
     implementation project(path: ':databinding')
-
-
 
 
     /*** Unit Test 部分的功能   待开放学习的部分 **********************************************/

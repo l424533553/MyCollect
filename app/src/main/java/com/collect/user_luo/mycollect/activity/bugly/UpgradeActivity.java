@@ -8,7 +8,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.collect.user_luo.mycollect.R;
+import com.collect.user_luo.R;
 import com.tencent.bugly.beta.Beta;
 import com.tencent.bugly.beta.download.DownloadListener;
 import com.tencent.bugly.beta.download.DownloadTask;
@@ -19,7 +19,6 @@ import com.tencent.bugly.beta.download.DownloadTask;
 public class UpgradeActivity extends Activity implements View.OnClickListener {
     private TextView tv;
     private Button start;
-
 
     @Override
     public void onClick(View v) {

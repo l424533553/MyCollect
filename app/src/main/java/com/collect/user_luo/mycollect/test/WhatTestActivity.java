@@ -5,9 +5,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.collect.user_luo.mycollect.R;
-
-import leavesc.hello.databindingsamples.BlankFragment;
+import com.collect.user_luo.R;
 
 import static com.collect.user_luo.mycollect.config.IIntentConstants.INTENT_EXTRA_NAME;
 import static com.collect.user_luo.mycollect.config.IIntentConstants.JUMP_VIEW2_TEST1;

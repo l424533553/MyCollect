@@ -7,11 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 
-import com.collect.user_luo.mycollect.R;
+import com.collect.user_luo.R;
+import com.collect.user_luo.databinding.ActivityWebMenuBinding;
 import com.collect.user_luo.mycollect.adapter.StringAdapter;
 import com.collect.user_luo.mycollect.data.HomeData;
-import com.collect.user_luo.mycollect.databinding.ActivityWebMenuBinding;
-import com.collect.user_luo.mycollect.listener.OnItemClickListener;
 
 import java.util.ArrayList;
 import java.util.List;

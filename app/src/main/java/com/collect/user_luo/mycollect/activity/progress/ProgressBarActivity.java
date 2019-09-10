@@ -1,7 +1,8 @@
 package com.collect.user_luo.mycollect.activity.progress;
 import android.app.Activity;
 import android.os.Bundle;
-import com.collect.user_luo.mycollect.R;
+
+import com.collect.user_luo.R;
 
 public class ProgressBarActivity extends Activity {
 

@@ -4,7 +4,7 @@ import android.databinding.BindingAdapter;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.collect.user_luo.mycollect.R;
+import com.collect.user_luo.R;
 
 /**
  * 作者：罗发新

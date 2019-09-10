@@ -11,7 +11,8 @@ import android.view.View.OnTouchListener;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 
-import com.collect.user_luo.mycollect.R;
+import com.collect.user_luo.R;
+
 
 /**
  * @author manymore13

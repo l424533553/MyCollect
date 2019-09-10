@@ -3,7 +3,8 @@ package com.collect.user_luo.mycollect.activity.bugly;
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.collect.user_luo.mycollect.R;
+import com.collect.user_luo.R;
+
 
 /**
  * Created by wenjiewu on 2016/6/2.

@@ -9,7 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
-import com.collect.user_luo.mycollect.R;
+import com.collect.user_luo.R;
+import com.xuanyuan.library.utils.log.MyLog;
+
 
 public class MyServiceActivity extends AppCompatActivity {
 
@@ -35,7 +37,7 @@ public class MyServiceActivity extends AppCompatActivity {
             //强制转换
             MyService.MyBinder mb = (MyService.MyBinder) service;
             int step = mb.getProcess();
-            Mylog.log("当前进度为：" + step);
+            MyLog.log("当前进度为：" + step);
         }
 
         //当客户端和服务的连接丢失了
@@ -83,7 +85,7 @@ public class MyServiceActivity extends AppCompatActivity {
                     unbindService(conn);
                     isBindService = false;
                 } catch (Exception e) {
-                    Mylog.log(e.getMessage()+"原因"+e.getCause());
+                    MyLog.log(e.getMessage()+"原因"+e.getCause());
                     e.printStackTrace();
                 }
                 break;

@@ -17,7 +17,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
 
-import com.collect.user_luo.mycollect.R;
+
+import com.collect.user_luo.R;
 
 import org.jetbrains.annotations.NotNull;
 

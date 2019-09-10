@@ -10,9 +10,9 @@ import android.widget.ScrollView;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import com.collect.user_luo.mycollect.R;
+import com.collect.user_luo.R;
 import com.collect.user_luo.mycollect.config.IConstants;
-import com.xuanyuan.library.utils.MyPreferenceUtils;
+import com.xuanyuan.library.utils.storage.MyPreferenceUtils;
 import com.xuanyuan.library.base.activity.MyAppCompatActivity;
 import com.xuanyuan.library.help.HardwareHelper;
 
@@ -27,10 +27,7 @@ import static com.xuanyuan.library.config.IConfig.SP_FLAG_BOOLEAN_SCREEN_STATE;
  */
 public class HardwareActivity extends MyAppCompatActivity implements View.OnClickListener, IConstants {
 
-    @Override
-    public boolean isCheckPermissions() {
-        return false;
-    }
+
 
     private TextView tvChargeState;
     private Switch stScreenState;
@@ -99,6 +96,11 @@ public class HardwareActivity extends MyAppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_hardware);
         hardwareHelper = new HardwareHelper(context);
         initView();
+    }
+
+    @Override
+    protected String[] getPermissionsArray() {
+        return new String[0];
     }
 
     @Override

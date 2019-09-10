@@ -10,8 +10,9 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
 
+import com.collect.user_luo.R;
 import com.collect.user_luo.mycollect.MainActivity;
-import com.collect.user_luo.mycollect.R;
+import com.xuanyuan.library.utils.log.MyLog;
 
 /**
  * 说明：Service
@@ -46,7 +47,7 @@ public class MyService extends Service {
         super.onCreate();
         showIntent();
 
-        Mylog.log("服务创建了");
+        MyLog.log("服务创建了");
         //开启一个线程，模拟耗时任务
         new Thread() {
             @Override
@@ -87,7 +88,7 @@ public class MyService extends Service {
      */
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Mylog.log("服务启动了");
+        MyLog.log("服务启动了");
         return super.onStartCommand(intent, flags, startId);
     }
 
@@ -101,7 +102,7 @@ public class MyService extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         // TODO: Return the communication channel to the service.
-        Mylog.log("服务绑定了");
+        MyLog.log("服务绑定了");
         return new MyBinder();
 
     }
@@ -120,7 +121,7 @@ public class MyService extends Service {
      */
     @Override
     public boolean onUnbind(Intent intent) {
-        Mylog.log("服务解绑了");
+        MyLog.log("服务解绑了");
         return super.onUnbind(intent);
     }
 
@@ -130,7 +131,7 @@ public class MyService extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Mylog.log("服务销毁了");
+        MyLog.log("服务销毁了");
     }
 
 }

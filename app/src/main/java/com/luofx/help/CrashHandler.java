@@ -8,7 +8,8 @@ import android.os.SystemClock;
 import android.text.format.Time;
 import android.util.Log;
 
-import com.luofx.utils.log.LogWriteUtils;
+
+import com.xuanyuan.library.utils.log.LogWriteUtils;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -101,7 +102,7 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
         mContext = ctx;
         mDefaultHandler = Thread.getDefaultUncaughtExceptionHandler();
         Thread.setDefaultUncaughtExceptionHandler(this);
-        LogWriteUtils.init();
+        LogWriteUtils.initLog(false);
     }
 
     /**
@@ -119,8 +120,6 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
             System.exit(0);
         }
     }
-
-
 
 
     /**

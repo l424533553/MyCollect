@@ -9,10 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.collect.user_luo.mycollect.R;
-import com.collect.user_luo.mycollect.databinding.FragmentTest1Binding;
+import com.collect.user_luo.R;
+import com.collect.user_luo.databinding.FragmentTest1Binding;
 
-import leavesc.hello.databindingsamples.databinding.FragmentBlankBinding;
 
 /**
  * 作者：leavesC

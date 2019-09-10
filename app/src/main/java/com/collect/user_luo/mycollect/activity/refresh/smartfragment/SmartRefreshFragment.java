@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.collect.user_luo.mycollect.R;
+import com.collect.user_luo.R;
 import com.collect.user_luo.mycollect.adapter.MyPagerAdapter_Advance;
 
 import java.util.ArrayList;
@@ -125,12 +125,10 @@ public class SmartRefreshFragment extends Fragment implements View.OnClickListen
                 break;
             case R.id.btnThird:
                 viewPager.setCurrentItem(2);
-                Mylog.log("点击第三个按钮");
 //                initFragment3();
                 break;
             case R.id.btnFourth:
                 viewPager.setCurrentItem(3);
-                Mylog.log("点击第四个按钮");
 //                initFragment3();
                 break;
             default:
