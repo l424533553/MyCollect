@@ -17,8 +17,7 @@ import com.bilibili.magicasakura.utils.ThemeUtils;
 import com.collect.user_luo.R;
 import com.collect.user_luo.mycollect.adapter.StringAdapter;
 import com.collect.user_luo.mycollect.data.HomeData;
-import com.luofx.help.ThemeHelper;
-import com.luofx.help.dailog.CardPickerDialog;
+import com.collect.user_luo.mycollect.dialog.CardPickerDialog;
 import com.xuanyuan.library.utils.animation.SnackAnimationUtil;
 import com.xuanyuan.library.base.activity.MyAppCompatActivity;
 

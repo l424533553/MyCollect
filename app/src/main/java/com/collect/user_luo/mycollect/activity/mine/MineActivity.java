@@ -1,6 +1,8 @@
 package com.collect.user_luo.mycollect.activity.mine;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -9,10 +11,8 @@ import com.collect.user_luo.R;
 import com.xuanyuan.library.MyTestActivity;
 import com.xuanyuan.library.base.activity.MyAppCompatActivity;
 
-
+//
 public class MineActivity extends MyAppCompatActivity implements View.OnClickListener {
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,9 +20,13 @@ public class MineActivity extends MyAppCompatActivity implements View.OnClickLis
 
         final ImageView iv = findViewById(R.id.ivAnimate);
         //将animated-selector设置为控件图像
-        Drawable drawable = getResources().getDrawable(R.drawable.animated_selector);
-        iv.setImageDrawable(drawable);
+        if(Build.VERSION.SDK_INT>=21){
+            Drawable drawable = getResources().getDrawable(R.drawable.animated_selector);
+            iv.setImageDrawable(drawable);
+        }
 
+
+        // 数据
         findViewById(R.id.btnOn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

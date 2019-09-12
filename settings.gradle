@@ -1,5 +1,5 @@
 include ':app', ':magicasakura', ':databinding'
 include ':LibraryProject'
 project(':LibraryProject').projectDir = new File('../LibraryProject/')
-include ':LibraryProject:library'
+include ':LibraryProject:jarlibrary'
 include ':LibraryProject:arrlibrary'

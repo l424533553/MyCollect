@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--   <animated-selector  需要sdk>=21 -->
-<animated-selector xmlns:android="http://schemas.android.com/apk/res/android">
+<animated-selector xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- 开启状态 -->
     <item

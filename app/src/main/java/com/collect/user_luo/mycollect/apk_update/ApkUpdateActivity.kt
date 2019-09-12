@@ -12,7 +12,7 @@ import com.collect.user_luo.mycollect.apk_update.download.DownloadIntentService
 import com.xuanyuan.library.MyToast
 
 /**
- * APK 更新测试
+ * APK 更新测试 更新的Activity
  *
  */
 @Suppress("DEPRECATION")

@@ -19,6 +19,7 @@
 
     <!--  晚上文字的颜色  -->
     <color name="night_text">#9E9E9E</color>
+    <color name="color_clean">#9E9E9E</color>
 
     <color name="bg_include_title">#9FC93B</color>
 

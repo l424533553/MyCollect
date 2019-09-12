@@ -1,4 +1,7 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -46,7 +49,6 @@ android {
             signingConfig signingConfigs.config
         }
 
-
 //        sourceSets {
 //            //指定原始.proto文件的位置
 //            main {
@@ -81,9 +83,9 @@ dependencies {
     //没有使用特殊Header，可以不加这行
 
     /*  微信 生成二维码  jar包 */
-    implementation 'com.google.zxing:core:3.3.3'
+    implementation 'com.google.zxing:core:3.4.0'
     implementation 'eu.the4thfloor.volley:com.android.volley:2015.05.28'
-    implementation 'com.alibaba:fastjson:1.2.49'
+    implementation 'com.alibaba:fastjson:1.2.60'
 
     //********************
     implementation 'com.android.support:recyclerview-v7:28.0.0'
@@ -121,18 +123,18 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.3'
 
     /** ********  retrofit2+Rxjava    主流框架 *****************/
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.3'
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.12'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
 
     //网络请求框架 retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
-    implementation 'com.squareup.okhttp3:okhttp:3.12.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.1.1'
+    implementation 'com.squareup.okhttp3:okhttp:4.1.1'
 
     // okio通信框架
-    implementation 'com.squareup.okio:okio:2.2.2'
+    implementation 'com.squareup.okio:okio:2.4.0'
     // 如果本地的NDk需要 更新则要配置下面的数据
     // implementation 'com.tencent.bugly:nativecrashreport:3.6.0.1'
 
@@ -143,7 +145,7 @@ dependencies {
     //蓝牙使用框架
     implementation 'com.inuker.bluetooth:library:1.4.0'
     //弹出框的框架
-    implementation 'com.github.f0ris.sweetalert:library:1.5.1'
+    implementation 'com.github.f0ris.sweetalert:library:1.6.2'
     /* 网络通信 框架 */
     implementation files('libs/xUtils-2.6.14.jar')
     //图片引入框架
@@ -160,12 +162,15 @@ dependencies {
     implementation 'org.aspectj:aspectjrt:1.8.14'
 
     // 引入了公共类
-    implementation project(':LibraryProject:library')
-//    implementation project(':LibraryProject:srclibrary')
-
+//    implementation project(':LibraryProject:library')
+    implementation 'com.github.garretyoder:Colorful:2.3.4'
     implementation project(path: ':magicasakura')
     implementation project(path: ':databinding')
+    implementation project(path: ':LibraryProject:arrlibrary')
+    implementation project(path: ':LibraryProject:jarlibrary')
 
+//    implementation project(path: ':LibraryProject:arrlibrary')
+//    implementation project(path: ':LibraryProject:library')
 
     /*** Unit Test 部分的功能   待开放学习的部分 **********************************************/
 //    androidTestImplementation 'com.android.support.test:runner:1.0.2'
@@ -178,10 +183,8 @@ dependencies {
 
 }
 
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-// 依赖插件脚本
-apply from: 'tinker-support.gradle'
+
+
 // 符号表插件，可以方便数据的还原
 //apply plugin: 'bugly'
 //bugly {

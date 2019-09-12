@@ -1,4 +1,4 @@
-package com.luofx.help.dailog;
+package com.collect.user_luo.mycollect.dialog;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -7,6 +7,7 @@ import android.widget.PopupWindow;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 /**
+ * VM  不用移动
  * Created by Longer on 2016/10/26.
  */
 public  class BaseDialog {

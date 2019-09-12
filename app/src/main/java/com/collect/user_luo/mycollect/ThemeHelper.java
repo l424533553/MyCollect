@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.luofx.help;
+package com.collect.user_luo.mycollect;
 
 import android.content.Context;
 

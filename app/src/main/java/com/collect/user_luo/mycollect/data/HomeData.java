@@ -41,13 +41,6 @@ public class HomeData implements IDataConstants {
      *
      * @return 返回
      */
-    public static List<String> getHomeData() {
-        List<String> data = new ArrayList<>();
-        data.add("界面刷新");
-        return data;
-
-    }
-
     public static Map<String, Class> getHomeMapData() {
         Map<String, Class> map = new HashMap<>();
         map.put("界面刷新", RefreshActivity.class);

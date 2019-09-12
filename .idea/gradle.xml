@@ -9,7 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$/../LibraryProject" />
             <option value="$PROJECT_DIR$/../LibraryProject/arrlibrary" />
-            <option value="$PROJECT_DIR$/../LibraryProject/library" />
+            <option value="$PROJECT_DIR$/../LibraryProject/jarlibrary" />
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/databinding" />

@@ -80,7 +80,7 @@
             android:exported="true" />
         <!--
         <service
-                    android:name="com.xuanyuan.library.service.JobSchedulerService"
+                    android:name="com.xuanyuan.JobSchedulerService"
                     android:permission="android.permission.BIND_JOB_SERVICE" />
         -->
         <!-- <activity android:name="com.collect.user_luo.mycollect.test.FloatVActivity" /> -->

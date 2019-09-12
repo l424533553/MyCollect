@@ -13,12 +13,10 @@ import android.widget.RemoteViews;
 import com.collect.user_luo.R;
 import com.collect.user_luo.mycollect.net.retrofit.DownloadCallBack;
 import com.collect.user_luo.mycollect.net.retrofit.RetrofitHttp;
-import com.luofx.help.NotificationHelpter;
+import com.xuanyuan.library.apk_update.NotificationHelpter;
 import com.xuanyuan.library.utils.MyApkUtils;
 
 import java.io.File;
-
-
 /**
  * 创建时间：2018/3/7
  * 编写人：damon
@@ -78,7 +76,6 @@ public class DownloadIntentService extends IntentService implements DownloadCall
         NotificationHelpter notificationHelpter = new NotificationHelpter(this);
         mNotification = notificationHelpter.getNotification(mNotifyManager, remoteViews, downloadId);
 
-
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -117,5 +114,4 @@ public class DownloadIntentService extends IntentService implements DownloadCall
         mNotifyManager.cancel(downloadId);
         Log.d(TAG, "下载发生错误--" + msg);
     }
-
 }

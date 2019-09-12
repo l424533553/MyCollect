@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.luofx.help.dailog;
+package com.collect.user_luo.mycollect.dialog;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -26,11 +26,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.collect.user_luo.R;
-import com.luofx.help.ThemeHelper;
-
+import com.collect.user_luo.mycollect.ThemeHelper;
 
 /**
- * 菜单 theme 主题选择按钮
+ * VM 本地留用
+ * 菜单 theme 主题选择  弹出框
+ *
  * @author xyczero
  */
 public class CardPickerDialog extends DialogFragment implements View.OnClickListener {
